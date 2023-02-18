@@ -26,6 +26,21 @@ pipeline {
                  sh 'docker run --rm --env-file /tmp/env --mount type=bind,source=$PWD,target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest'
             }
         }
-    
+
+        
+                stage('Push') {
+            steps {
+                script{
+                        docker.withRegistry('https://363412468025.dkr.ecr.us-east-2.amazonaws.com/test01', 'ecr:us-east-2:emoran') {
+                    app.push("${env.BUILD_NUMBER}")
+                    app.push("latest")
+                    }
+                }
+            }
+        }
+        
+        
+        
+        
     }
 }
