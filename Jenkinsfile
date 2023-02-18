@@ -27,20 +27,7 @@ pipeline {
             }
         }
 
-        
-                stage('Push') {
-            steps {
-                script{
-                        docker.withRegistry('https://363412468025.dkr.ecr.us-east-2.amazonaws.com/test01', 'ecr:us-east-2:emoran') {
-                    app.push("${env.BUILD_NUMBER}")
-                    app.push("latest")
-                    }
-                }
-            }
-        }
-        
-        
-        
+                
         
     }
 }
