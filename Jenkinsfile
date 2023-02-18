@@ -12,7 +12,7 @@ pipeline {
     stage('Build') { 
             steps { 
                 script{
-                 sh 'docker build -t app .'
+                 sh 'docker build -t emoran/php .'
     
                 }
             }
