@@ -12,7 +12,7 @@ pipeline {
     stage('Build') { 
             steps { 
                 script{
-                 sh 'docker build -t test01 .'
+                 sh 'docker build -t test01/php .'
     
                 }
             }
