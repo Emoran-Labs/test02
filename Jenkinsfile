@@ -16,7 +16,7 @@ pipeline {
             steps { 
                 script{
                  /*sh 'docker build -t test01 .'*/
-                 app = docker.build("test01")
+                 app = docker.build("test02")
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
     stage('Push') {
             steps {
                 script{
-                    docker.withRegistry('https://363412468025.dkr.ecr.us-east-2.amazonaws.com/test01', 'ecr:us-east-2:emoran') {
+                    docker.withRegistry('https://363412468025.dkr.ecr.us-east-2.amazonaws.com/test02', 'ecr:us-east-2:emoran') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
