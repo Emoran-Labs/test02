@@ -25,5 +25,5 @@ spec:
     app: test02
   ports:
   - name: http
-    port: 5000
-    targetPort: 3003
+    port: 5002
+    targetPort: 3002
